@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration | Smart Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Smart Salon</h1>
+            <img src="{{ url_for('static', filename='css/logo.png') }}" alt="Smart Salon Logo" class="logo">
+            
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Register for Smart Salon</h2>
+        <p>Please enter your details to register.</p>
+
+        <!-- User Registration Form -->
+        <section id="registration">
+            <form id="registrationForm">
+                <!-- Username Field -->
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Haircut Style Option -->
+                <div class="input-group">
+                    <label for="haircutStyle">Preferred Haircut Style:</label>
+                    <select id="haircutStyle" name="haircutStyle" required>
+                        <option value="" disabled selected>Select a haircut style</option>
+                        <option value="fade">Fade</option>
+                        <option value="buzz_cut">Buzz Cut</option>
+                        <option value="crew_cut">Crew Cut</option>
+                        <option value="pompadour">Pompadour</option>
+                        <option value="quiff">Quiff</option>
+                        <option value="undercut">Undercut</option>
+                        <option value="slick_back">Slick Back</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </section>
+
+        <!-- General Section with Hairstyle Image -->
+        <section id="general-info">
+            <h2>Explore Our Popular Hairstyle</h2>
+            <div class="general-content">
+                <img src="{{ url_for('static', filename='images/popular-hairstyle.jpg') }}" alt="Popular Hairstyle" class="hairstyle-image">
+                <p>Discover our most popular hairstyle that suits various face shapes and personal styles. At Smart Salon, we offer personalized recommendations to help you look your best.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include external JS files -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

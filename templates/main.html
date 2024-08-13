@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hairstyle Recommendations | Smart Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Smart Salon</h1>
+            <img src="{{ url_for('static', filename='css/logo.png') }}" alt="Smart Salon Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Find Your Perfect Hairstyle</h2>
+            <p>Upload your photo or capture it using your webcam to receive personalized hairstyle recommendations.</p>
+            <a href="#upload-webcam" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to Smart Salon, where your style and satisfaction are our top priorities. Our expert stylists offer personalized services tailored to enhance your natural beauty. From classic cuts to the latest trends, we ensure you leave feeling fabulous.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>Haircuts</h3>
+                    <p>Precision cuts tailored to your face shape and style preferences.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Hair Coloring</h3>
+                    <p>From bold colors to subtle highlights, we offer a range of coloring options.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Styling and Blowouts</h3>
+                    <p>Professional styling for any occasion, from casual to glamorous.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Facial Treatments</h3>
+                    <p>Revitalize your skin with our luxurious facial treatments.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Bridal and Event Styling</h3>
+                    <p>Specialized styling for weddings and other events, ensuring you look stunning.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="upload-webcam" class="upload-webcam">
+            <h2>Your Hairstyle Recommendations</h2>
+            <form id="photoForm">
+                <div class="input-group">
+                    <label for="photoInput">Upload Image:</label>
+                    <input type="file" id="photoInput" accept="image/*">
+                </div>
+
+                <div class="input-group">
+                    <button id="captureButton" type="button" class="btn btn-primary">CAPTURE</button>
+                    <video id="webcam" width="400" height="400" autoplay></video>
+                    <canvas id="webcamCanvas" style="display:none;"></canvas>
+                </div>
+
+                <img id="photoPreview" alt="Preview">
+
+                <button type="submit" class="btn btn-primary">UPLOAD</button>
+            </form>
+        </section>
+
+        <section id="results" class="recommendations" style="display:none;">
+            <h2>Recommended Hairstyles</h2>
+            <div id="hairstyles"></div>
+            <p id="faceShape"></p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Reach out for any inquiries or to book an appointment.</p>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:info@smartsalon.com">info@smartsalon.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">(+977) 9862573705</a></p>
+                <p>Address: PUTALISADAK, KATHMANDU, BAGMATI</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Smart Salon. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Include external JS files -->
+    <script src="{{ url_for('static', filename='js/model.js') }}"></script>
+</body>
+</html>
